@@ -13,6 +13,10 @@ myApp.api = (function (){
 	function getSocialCount(provider, pageurl){
 		if(typeof provider === 'string'){
 			if(typeof pageurl === 'string'){
+				if(myApp.helpers.validateURL(pageurl) === false){
+					throw new Error('url ' + pageurl + ' is not formatted');
+				};
+				
 				var provider = myApp.providerFactory.createProvider({
 					providerName : provider,					
 					pageUrl : pageurl
@@ -24,9 +28,15 @@ myApp.api = (function (){
 					providerName : provider,					
 				});
 				var promises = [];
-				pageurl.forEach(function(element){
-					provider.setPageUrl(element);
-					promises.push(provider.getSocialCount());
+				pageurl.forEach(function(specificPageUrl){
+					if(myApp.helpers.validateURL(specificPageUrl) === false){
+						throw new Error('url ' + specificPageUrl + ' is not formatted');
+					}
+					else{
+						provider.setPageUrl(specificPageUrl);
+						promises.push(provider.getSocialCount());	
+					}
+					
 				});
 				
 				return Promise.all(promises)
@@ -43,8 +53,13 @@ myApp.api = (function (){
 					providerName : providerName
 				});
 				pageurl.forEach(function(specificPageUrl){
-					specificProvider.setPageUrl(specificPageUrl);
-					promises.push(specificProvider.getSocialCount());
+					if(myApp.helpers.validateURL(specificPageUrl) === false){
+						throw new Error('url ' + specificPageUrl + ' is not formatted');
+					}
+					else{
+						specificProvider.setPageUrl(specificPageUrl);
+						promises.push(specificProvider.getSocialCount());	
+					}
 				})
 			});
 
@@ -57,7 +72,7 @@ myApp.api = (function (){
 		
 	}
 	/**
-	 * Get social count
+	 * Get formatted results
 	 *
 	 * @param {string} provider - name of the provider (twitter, facebook...)
 	 * @param {object} results social counting 
@@ -66,6 +81,7 @@ myApp.api = (function (){
 		var provider = myApp.providerFactory.createProvider({providerName : provider});
 		return provider.getFormattedResults(results);
 	}
+
 	return {
 		getSocialCount : getSocialCount,
 		getFormattedResults : getFormattedResults		

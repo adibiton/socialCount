@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 		}  	
   	},
 	connect: {
-		server: {
+		serve: {
 			options: {
 				port: 9001
       	}
