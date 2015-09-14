@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Buzzzzz</title>
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="../src/helpers.js"></script>
+	<script type="text/javascript" src="../src/abstractProvider.js"></script>
+	<script type="text/javascript" src="../src/facebookProvider.js"></script>
+	<script type="text/javascript" src="../src/twitterProvider.js"></script>
+	<script type="text/javascript" src="../src/pinterestProvider.js"></script>
+	<script type="text/javascript" src="../src/providerFactory.js"></script>
+	<script type="text/javascript" src="../src/app.js"></script>
+</head>
+<body>
+	
+
+	<div class="header">Social count</div>
+	<form class="form-wrapper">
+    	<input type="text" id="search" required>
+    	<input type="submit" value="submit" id="submit">
+    </form>
+    <div class="results" style="display:none;">
+    	<span class="results-span" id="results-facebook"></span><br/>
+    	<span class="results-span" id="results-twitter"></span><br/>
+    	<span class="results-span" id="results-pinterest"></span><br/>
+    </div>
+
+    <script type="text/javascript" src="events.js"></script>
+</form>
+	<!-- <script type="text/javascript" src="client.js"></script> -->
+</body>
+</html>

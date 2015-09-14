@@ -1,0 +1,21 @@
+{
+  "name": "socialCount",
+  "version": "0.0.0",
+  "authors": [
+    "adi.biton <adi.biton@sap.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jasmine-core": "jasmine#~2.3.4"
+  },
+  "devDependencies": {
+    "jasmine-core": "jasmine#~2.3.4"
+  }
+}

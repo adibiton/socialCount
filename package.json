@@ -1,0 +1,21 @@
+{
+  "name": "socialCount",
+  "version": "0.0.1",
+  "description": "socialCount",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.5.2",
+    "grunt": "^0.4.5",
+    "grunt-contrib-jasmine": "^0.9.1",
+    "grunt-jasmine-node": "^0.3.1",
+    "mock-promises": "^0.6.0"
+  },
+  "dependencies": {
+    "grunt-serve": "^0.1.6"
+  }
+}
