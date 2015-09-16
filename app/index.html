@@ -12,7 +12,8 @@
 	<script type="text/javascript" src="../src/twitterProvider.js"></script>
 	<script type="text/javascript" src="../src/pinterestProvider.js"></script>
 	<script type="text/javascript" src="../src/providerFactory.js"></script>
-	<script type="text/javascript" src="../src/app.js"></script>
+	<script type="text/javascript" src="../src/api.js"></script>
+	<script type="text/javascript" src="application.js"></script>
 </head>
 <body>
 	
@@ -29,7 +30,11 @@
     	<span class="results-span" id="results-pinterest"></span><br/>
     </div>
 
-    <script type="text/javascript" src="events.js"></script>
+    <script type="text/javascript">
+	    $(document).ready(function(){
+	    	myApp.application.init();
+	    });
+    </script>
 </form>
 	<!-- <script type="text/javascript" src="client.js"></script> -->
 </body>
