@@ -1,7 +1,7 @@
 'use strict';
 var myApp = myApp || {};
 
-myApp.application = (function(){
+myApp.eventHandlers = (function(){
 	function init(){
 		$('.form-wrapper').submit( function (event) {
 			try{
